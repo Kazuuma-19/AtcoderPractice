@@ -1,6 +1,6 @@
 function Main(input) {
   // 問題を解決するための処理を書く
-  const input = input.split(' ');
+  const args = input.split('');
 
   // 処理を書く
 }
