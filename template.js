@@ -1,6 +1,6 @@
 function Main(input) {
-  const args = input.split(''); //配列
+  const args = input.split('');
 }
-// Main();
+// Main(``);
 //*この行以降は編集しないでください（標準入出力から一度に読み込み、Mainを呼び出します）
 Main(require("fs").readFileSync("/dev/stdin", "utf8")); 
