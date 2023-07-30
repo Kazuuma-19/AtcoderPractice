@@ -3,4 +3,4 @@ function main(input) {
 }
 main(``);
 
-// main(require("fs").readFileSync("/dev/stdin", "utf8")); s
+// main(require("fs").readFileSync("/dev/stdin", "utf8"));
