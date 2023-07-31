@@ -1,4 +1,4 @@
-// 自力回答
+// WA: 自力回答
 // function main(input) {
 //   const args = input.split('\n');
 
