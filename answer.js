@@ -1,6 +1,6 @@
 function main(input) {
-  const args = input.split('\n');
-  console.log('test');
+  const args = input.trim().split('\n');
+  console.log(args);
 }
 main(``);
 
