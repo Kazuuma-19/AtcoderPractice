@@ -1,3 +1,4 @@
+// WA
 function main(input) {
   const args = input.trim().split('\n');
   const [N, M] = args[0].split(' ').map(Number);
