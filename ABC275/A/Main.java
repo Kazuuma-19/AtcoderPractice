@@ -6,6 +6,7 @@
 
 // package ABC275.A;
 
+package ABC275.A;
 import java.util.Scanner;
 
 public class Main {

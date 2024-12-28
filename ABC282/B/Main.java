@@ -1,4 +1,4 @@
-// package ABC282.B;
+ package ABC282.B;
 
 import java.util.Scanner;
 

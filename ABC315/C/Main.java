@@ -5,7 +5,7 @@
 ****************** */
 
 // package ABC315.C;
-
+package ABC315.C;
 import java.util.Arrays;
 import java.util.Scanner;
 

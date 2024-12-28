@@ -2,7 +2,7 @@
   全探索
 **********/
 // package ABC201.C;
-
+package ABC201.C;
 import java.util.Scanner;
 
 public class Main {

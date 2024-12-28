@@ -1,7 +1,7 @@
 /*********
   全探索
 **********/
-// package ABC213.B;
+ package ABC213.B;
 
 import java.util.Scanner;
 
