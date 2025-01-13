@@ -4,20 +4,28 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 // TLE
-// TODO: binary Searchを使って計算量を落とす
+// TODO: 計算量は確実に落ちてそう。ただ、WAが出てる。numberOfMochiが奇数のとき正常に動作するかとか確認するところから
 public class Main {
     public static int calculatePattern(int numberOfMochi, List<Integer> mochiLists) {
         int pairCount = 0;
-        for (int topIndex = 0; topIndex < numberOfMochi; topIndex++) {
-            int top = mochiLists.get(topIndex);
-            for (int bottomIndex = topIndex + 1;  bottomIndex < numberOfMochi;  bottomIndex++) {
-                int bottom = mochiLists.get(bottomIndex);
 
-                if(bottom / 2 >= top) {
-                    pairCount = pairCount + (numberOfMochi - bottomIndex);
-                    break;
+        for (Integer mochiList : mochiLists) {
+            int first = 0;
+            int end = numberOfMochi - 1;
+
+            int top = mochiList;
+            // はじめに一致するbottomIndexを探す
+            while (first <= end) {
+                int middle = (first + end) / 2;
+                int middleValue = mochiLists.get(middle);
+
+                if (middleValue / 2 >= top) { // 候補になる
+                    end = middle - 1;
+                } else {
+                    first = middle + 1;
                 }
             }
+            pairCount = pairCount + (numberOfMochi - first);
         }
         return pairCount;
     }
