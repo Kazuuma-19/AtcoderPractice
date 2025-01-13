@@ -3,18 +3,21 @@ package ABC388.C;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-// TLE
-// TODO: 計算量は確実に落ちてそう。ただ、WAが出てる。numberOfMochiが奇数のとき正常に動作するかとか確認するところから
-public class Main {
-    public static int calculatePattern(int numberOfMochi, List<Integer> mochiLists) {
-        int pairCount = 0;
 
-        for (Integer mochiList : mochiLists) {
-            int first = 0;
+/**
+ * binary Searchで計算量を落とす
+ * int: +-2^31, long: +-2^63
+ */
+public class Main {
+    public static long calculatePattern(int numberOfMochi, List<Integer> mochiLists) {
+        long pairCount = 0;
+
+        for (int mochiIndex = 0; mochiIndex < numberOfMochi; mochiIndex++) {
+            int top = mochiLists.get(mochiIndex);
+            int first = mochiIndex + 1;
             int end = numberOfMochi - 1;
 
-            int top = mochiList;
-            // はじめに一致するbottomIndexを探す
+            // 最小のbottomIndexを探す
             while (first <= end) {
                 int middle = (first + end) / 2;
                 int middleValue = mochiLists.get(middle);
@@ -29,7 +32,7 @@ public class Main {
         }
         return pairCount;
     }
-    public static int getInput() {
+    public static void getInput() {
         Scanner sc = new Scanner(System.in);
         int numberOfMochi = Integer.parseInt(sc.nextLine());
         String[] mochiParts = sc.nextLine().split(" ");
@@ -38,10 +41,9 @@ public class Main {
         for(String mochi : mochiParts) {
             mochiLists.add(Integer.parseInt(mochi));
         }
-        return calculatePattern(numberOfMochi, mochiLists);
+        System.out.println(calculatePattern(numberOfMochi, mochiLists));
     }
     public static void main(String[] args) {
-        int pairCount = getInput();
-        System.out.println(pairCount);
+        getInput();
     }
 }
